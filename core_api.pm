@@ -91,7 +91,6 @@ sub get_and_parse_ads($$)
         }
 
         print "html len: ".length($html)."\n" if($debug);
-        print $html;
 
         # call parser function on the website content
     	my @links = $site{'parser'}($html);

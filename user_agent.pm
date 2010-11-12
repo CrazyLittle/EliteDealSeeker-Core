@@ -144,8 +144,7 @@ sub get($$)
 
     # finalize
     $request .= "\x0d\x0a";
-
-    print $request;
+    #print $request;
 
     # resolve IP address
     my $ip_packed = gethostbyname($host);

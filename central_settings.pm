@@ -560,7 +560,7 @@ our @sites_info =
 	'parser' => sub
 	{
 		my ($html) = @_;
-                return common_parser::parse('vbulletin3p8p4', $html, '');
+                return common_parser::parse('vbulletin4p0p5', $html, '');
 	},
 	'active' => 1,
 	'urls' => [	'http://forums.watchuseek.com/f29/',

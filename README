@@ -33,7 +33,7 @@ $VAR1 = [
           ],
 ...
 
-Your are seeing perl's printout of the data structure that gets consumed by the
+You are seeing perl's printout of the data structure that gets consumed by the
 rest of EliteDealSeeker.
 
 With this core code separated away from the rest of EliteDealSeeker, I've tried
