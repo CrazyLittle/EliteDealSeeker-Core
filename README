@@ -1,0 +1,41 @@
+This is the EliteDealSeeker "core" code - the code that visits websites and
+parses their forum posts.
+
+The best way to get started is to look in central_settings for the list of
+websites to visit. Choose one 'site_name' and supply it as a parameter to
+the test_site.pl script.
+
+Example:
+
+C:\temp\EliteDealSeeker-Core>perl test_site.pl dslreports
+site:     dslreports
+category: computers
+visiting: http://www.dslreports.com/forum/forsale
+html len: 75845
+$VAR1 = [
+          [
+            'http://www.dslreports.com/forum/r25065676-FS-iPhone-4-32-GB-and...
+            'iPhone 4 32 GB and iPad 16 GB wi-fi and Mac Mini',
+            'dslreports',
+            'computers'
+          ],
+          [
+            'http://www.dslreports.com/forum/r23303633-FS-Laptop-AC-Adapters...
+            'Laptop AC Adapters',
+            'dslreports',
+            'computers'
+          ],
+          [
+            'http://www.dslreports.com/forum/r25002604-FS-Forsale-Wireless-c...
+            'Forsale: Wireless card and 2meter BIRD Watt Meter',
+            'dslreports',
+            'computers'
+          ],
+...
+
+Your are seeing perl's printout of the data structure that gets consumed by the
+rest of EliteDealSeeker.
+
+With this core code separated away from the rest of EliteDealSeeker, I've tried
+to make a very simple environment by which others can add/fix sites/categories.
+
