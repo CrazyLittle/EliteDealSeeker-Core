@@ -44,6 +44,11 @@ sub get_and_parse_ads($$)
     }
     die "unknown site: $site_name\n" unless(%site);
 
+    if(!$site{'active'}) {
+        print "$site_name is marked inactive\n" if($debug);
+        return;
+    }
+
     print 'site:     ', $site{'sitename'}, "\n" if($debug);
     print 'category: ', $site{'category'}, "\n" if($debug);	
 
