@@ -58,7 +58,7 @@ our %ar15_template = (
 			return @links;
 		},
 
-		'active' => 0,
+		'active' => 1,
 		'cookie' => ''
 	);
 

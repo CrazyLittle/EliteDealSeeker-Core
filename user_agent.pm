@@ -130,11 +130,12 @@ sub get($$)
     $request .= "GET $path HTTP/1.1\x0d\x0a";
     $request .= "Host: $host\x0d\x0a";
     $request .= "User-Agent: $browser_tag\x0d\x0a";
-    $request .= "Accept: text/css,*/*;q=0.1\x0d\x0a";
+    $request .= "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\x0d\x0a";
     $request .= "Accept-Language: en-us,en;q=0.5\x0d\x0a";
     $request .= "Accept-Encoding:\x0d\x0a";
     $request .= "Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7\x0d\x0a";
-    $request .= "Keep-Alive: 115\x0d\x0a";
+    #$request .= "Keep-Alive: 115\x0d\x0a";
+    $request .= "Connection: close\x0d\x0a";
     $request .= "Referrer: $host\x0d\x0a";
 
     # append any additional headers (cookies, etc)
@@ -144,7 +145,6 @@ sub get($$)
 
     # finalize
     $request .= "\x0d\x0a";
-    #print $request;
 
     # resolve IP address
     my $ip_packed = gethostbyname($host);
@@ -170,6 +170,7 @@ sub get($$)
     close SOCKET or die "close: $!";
 
     my $content = join('', @lines);
+
     my $index = index($content, "\x0d\x0a\x0d\x0a");
     die "parsing content from GET reply!" unless($index != -1);
     return substr($content, $index, length($content)-$index);

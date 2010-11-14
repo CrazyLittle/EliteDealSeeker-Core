@@ -29,7 +29,30 @@ use central_settings;
 use core_api;
 
 # if site is given as argument, visit site and parse ads, showing result
-if($ARGV[0]) {
+unless($ARGV[0]) {
+    print "usage: test_site.pl <arg>\n";
+    print "\n";
+    print "  where arg is:\n";
+    print "  --list      lists all available sites to test\n";
+    print "  --all       tests every site\n";
+    print "  <site>      tests single site\n";
+    print "\n";
+}
+elsif($ARGV[0] eq '--list') {
+	foreach my $site(@central_settings::sites_info) {
+		print $site->{'sitename'}."\n";
+	}
+}
+elsif($ARGV[0] eq '--all') {
+	foreach my $site(@central_settings::sites_info) {
+        my $site_name = $site->{'sitename'};
+		print "Testing $site_name\n";
+        my @dbdata;
+        @dbdata = core_api::get_and_parse_ads($site_name, 1);
+	    print Dumper(\@dbdata);
+	}
+}
+else {
     my $site_name = $ARGV[0];
 
     my @dbdata;
@@ -37,9 +60,3 @@ if($ARGV[0]) {
 
 	print Dumper(\@dbdata);
 }
-# otherwise list all sites that are available
-else {
-	foreach my $site(@central_settings::sites_info) {
-		print $site->{'sitename'}."\n";
-	}
-}	
