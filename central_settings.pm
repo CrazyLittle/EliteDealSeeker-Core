@@ -1645,6 +1645,30 @@ our @sites_info =
         'urls' => [     'http://www.dslreports.com/forum/forsale'	],
 },
 
+{
+        'sitename' => 'hardforum',
+        'category' => 'computers',
+        'parser' => sub
+        {
+                my ($html) = @_;
+                return common_parser::parse('vbulletin3p8p4', $html, 'http://hardforum.com/');
+        },
+        'active' => 1,
+        'urls' => [     'http://hardforum.com/forumdisplay.php?f=17'	],
+},
+
+{
+        'sitename' => 'techpowerup',
+        'category' => 'computers',
+        'parser' => sub
+        {
+                my ($html) = @_;
+                return common_parser::parse('vbulletin3p8p4', $html, 'http://forums.techpowerup.com/');
+        },
+        'active' => 1,
+        'urls' => [     'http://forums.techpowerup.com/forumdisplay.php?f=43'	],
+},
+
 #
 # AQUARIA
 #
