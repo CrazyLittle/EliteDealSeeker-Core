@@ -1405,11 +1405,13 @@ our @sites_info =
 	'parser' => sub
 	{
 		my ($html) = @_;
-		return common_parser::parse('ultimatebb_snipershide', $html, 'http://www.snipershide.com/forum/');
+		return common_parser::parse('ultimatebb_snipershide', $html, 'http://www.snipershide.com');
 	},
 	'active' => 1,
 	'urls' => [	'http://www.snipershide.net/forum/ubbthreads.php?ubb=postlist&Board=15&page=1',
-			'http://www.snipershide.net/forum/ubbthreads.php?ubb=postlist&Board=21&page=1'	],
+			    'http://www.snipershide.net/forum/ubbthreads.php?ubb=postlist&Board=21&page=1',
+                'http://www.snipershide.com/forum/ubbthreads.php?ubb=postlist&Board=39&page=1'
+            ],
 	'cookie' => ''
 },
 {

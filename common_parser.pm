@@ -280,9 +280,8 @@ sub parse
 	}
 
 	elsif($type eq 'ultimatebb_snipershide') {
-		while($html =~ m/<a href=".*?(ubbthreads\.php\?ubb=showflat&amp;Number=\d+).*?>(.*?)<\/a>/gi) {
+		while($html =~ m/<a href="(\/forum\/ubbthreads\.php\?ubb=showflat&amp;Number=\d+)[^"]+">([^<]+)<\/a>/gi) {
 			my ($url, $title) = ($1, $2);
-			next if(substr($title, 0, 1) eq "<");
 			$url =~ s/&amp;/&/g;
 			push(@links, [$prefix_url.$url, $title]);
 		}
