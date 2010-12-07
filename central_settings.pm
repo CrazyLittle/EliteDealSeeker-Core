@@ -1165,12 +1165,12 @@ our @sites_info =
 	 'parser' => sub
 	 {
 		 my ($html) = @_;
-		 return common_parser::parse('vbulletin3p6p2', $html, 'http://hkpro.com/forum/');
+		 return common_parser::parse('vbulletin4p0p5', $html, 'http://hkpro.com/forum/');
 	 },
 	'active' => 1,
-	'urls' => [	'http://hkpro.com/forum/forumdisplay.php?f=8',
-			'http://hkpro.com/forum/forumdisplay.php?f=10',
-			'http://hkpro.com/forum/forumdisplay.php?f=104'	],
+	'urls' => [	'http://hkpro.com/forum/forumdisplay.php?8-HK-PISTOLS-FOR-SALE',
+			'http://hkpro.com/forum/forumdisplay.php?10-HK-PARTS-AND-ACCESSORIES-FOR-SALE',
+			'http://hkpro.com/forum/forumdisplay.php?104-NON-HK-FIREARMS-FOR-SALE'	],
 	'cookie' => ''
 },
 {
@@ -1495,10 +1495,10 @@ our @sites_info =
 	'parser' => sub
 	{
 		my ($html) = @_;
-		return common_parser::parse('vbulletin3p6p2', $html, 'http://forums.gunboards.com/');
+		return common_parser::parse('vbulletin4p0p5', $html, 'http://forums.gunboards.com/');
 	},
 	'active' => 1,
-	'urls' => [	'http://forums.gunboards.com/forumdisplay.php?f=75'	],
+	'urls' => [	'http://forums.gunboards.com/forumdisplay.php?75-The-Trader-WTS-and-WTT-listing-board'	],
 	'cookie' => ''
 },
 {	
@@ -1538,7 +1538,7 @@ our @sites_info =
 		return common_parser::parse('phpbb_v1', $html, 'http://www.rugerforum.org/phpBB/');
 	},
 	'active' => 1,
-	'urls' => ['http://www.rugerforum.org/phpBB/viewforum.php?f=8'],
+	'urls' => ['http://www.rugerforum.org/phpBB/viewforum.php?f=41'],
 	'cookie' => ''
 },
 {
@@ -1547,7 +1547,7 @@ our @sites_info =
         'parser' => sub
         {
                 my ($html) = @_;
-                return common_parser::parse('phpbb_v1', $html, 'http://www.shotgunworld.com/bbs/');
+                return common_parser::parse('phpbb_v1.b', $html, 'http://www.shotgunworld.com/bbs/');
         },
 	'active' => 1,
 	'urls' => [	'http://www.shotgunworld.com/bbs/viewforum.php?f=74',
@@ -1613,9 +1613,9 @@ our @sites_info =
 {
         'sitename' => 'anandtech',
         'category' => 'computers',
-	'login_url' => 'http://forums.anandtech.com/login.php',	
-	'login_post' => {        'vb_login_username'=>'TomStone',
-                                 'vb_login_md5password'=>    '725255cbcc3259441dfdca0d802c3190',
+	    'login_url' => 'http://forums.anandtech.com/login.php',	
+    	'login_post' => {        'vb_login_username'=>'TomStone',
+                                 'vb_login_md5password'=>'725255cbcc3259441dfdca0d802c3190',
                                  'vb_login_md5password_utf'=>'725255cbcc3259441dfdca0d802c3190',
                                  'do'=>'login',
                                  'vb_login_password'=>''

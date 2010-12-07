@@ -155,7 +155,8 @@ sub get($$)
     socket(SOCKET,PF_INET,SOCK_STREAM, (getprotobyname('tcp'))[2])
         or die "can't create a socket $!\n";
     connect(SOCKET, sockaddr_in(80, $ip_packed))
-        or die "can't connect to $host!";
+        or return '';
+        #or die "can't connect to $host!";
 
     print SOCKET $request;
 
@@ -172,7 +173,12 @@ sub get($$)
     my $content = join('', @lines);
 
     my $index = index($content, "\x0d\x0a\x0d\x0a");
-    die "parsing content from GET reply!" unless($index != -1);
+    
+    unless($index != -1) {
+        #die "parsing content from GET reply!" unless($index != -1);
+        return '';
+    }
+
     return substr($content, $index, length($content)-$index);
 }
 
