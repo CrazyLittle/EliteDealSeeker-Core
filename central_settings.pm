@@ -419,10 +419,22 @@ our @sites_info =
 	'parser' => sub
 	{
 		my ($html) = @_;
-		return common_parser::parse('vbulletin3p7p3', $html, 'http://rolexforums.com/');
+		return common_parser::parse('vbulletin3p8p0', $html, 'http://rolexforums.com/');
 	},
 	'active' => 1,
-	'urls' => [	'http://rolexforums.com/forumdisplay.php?f=9'	],
+	'urls' => [	'http://rolexforums.com/forumdisplay.php?f=9&drgn=1'	],
+	'cookie' => 'cDRGN=891958777'
+},
+{
+	'sitename' => 'Vintage Rolex Market',
+	'category' => 'watches',
+	'parser' => sub
+	{
+		my ($html) = @_;
+		return common_parser::parse('network54', $html, 'http://www.network54.com/Forum/207673/');
+	},
+	'active' => 1,
+	'urls' => [	'http://www.network54.com/Forum/207673/'	],
 	'cookie' => ''
 },
 {
@@ -730,6 +742,19 @@ our @sites_info =
 #
 # PAINTBALL
 #
+{
+	'sitename' => 'www.impulse-owners.com',
+	'category' => 'paintball',
+        'parser' => sub
+        {
+                my ($html) = @_;
+        	return common_parser::parse('smf_1p1p12', $html, 'http://www.impulse-owners.com/buyselltrade');
+        },
+	'active' => 1,
+	'urls' => [	'http://www.impulse-owners.com/buyselltrade/' ],
+	'cookie' => ''
+},
+
 {
 	'sitename' => 'www.pbreview.com',
 	'category' => 'paintball',

@@ -171,6 +171,7 @@ sub get($$)
     close SOCKET or die "close: $!";
 
     my $content = join('', @lines);
+    #print $content;
 
     my $index = index($content, "\x0d\x0a\x0d\x0a");
     

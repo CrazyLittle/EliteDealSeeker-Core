@@ -324,6 +324,15 @@ sub parse
 		}
 	}
 
+	elsif($type eq 'smf_1p1p12') {
+		while($html =~ m/<span id="msg_\d+"><a href="($prefix_url[^"]+)">([^<]+)<\/a>/mgi) {
+			my ($title,$url)=($2,$1);
+			$url =~ s/&amp;/&/g;
+			$url =~ s/\/\?PHPSESSID=[\w\d]+$//g;
+			push(@links, [$url,$title]);
+		}
+	}
+
 	elsif($type eq 'smf_2p0rc2') {
 		while($html =~ m/<a href="($prefix_url\/index\.php\/topic,[\d\.]+\.html)[^>]+>([^<]+)<\/a>/gi) {
 
