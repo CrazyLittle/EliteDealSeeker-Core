@@ -1022,14 +1022,14 @@ our @sites_info =
                 return common_parser::parse('ipb3p0p3', $html, '');
         },
         'active' => 1,
-        'urls' => [	'http://www.techpb.com/forum/Index.php?showforum=986',
-			'http://www.techpb.com/forum/Index.php?showforum=987',
-			'http://www.techpb.com/forum/Index.php?showforum=988',
-			'http://www.techpb.com/forum/Index.php?showforum=989',
-			'http://www.techpb.com/forum/Index.php?showforum=990',
-			'http://www.techpb.com/forum/Index.php?showforum=991',
-			'http://www.techpb.com/forum/Index.php?showforum=992',
-			'http://www.techpb.com/forum/Index.php?showforum=993'	],
+        'urls' => [	'http://www.techpb.com/forum/index.php?showforum=986',
+			'http://www.techpb.com/forum/index.php?showforum=987',
+			'http://www.techpb.com/forum/index.php?showforum=988',
+			'http://www.techpb.com/forum/index.php?showforum=989',
+			'http://www.techpb.com/forum/index.php?showforum=990',
+			'http://www.techpb.com/forum/index.php?showforum=991',
+			'http://www.techpb.com/forum/index.php?showforum=992',
+			'http://www.techpb.com/forum/index.php?showforum=993'	],
         'cookie' => ''
 },
 
