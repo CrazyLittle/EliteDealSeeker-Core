@@ -1043,7 +1043,7 @@ our @sites_info =
         {
                 my ($html) = @_;
                 my @links;
-                while($html =~ m/<td class='title'><a href='(.*?)'>(.*?)<\/a>/gi) {
+                while($html =~ m/<td class="title">\s+<a href="(.*?)">(.*?)<\/a>/gi) {
                         push(@links, ["http://www.armslist.com$1", $2]);
                 }
 
